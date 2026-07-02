@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeaveManagementSystem.Core.Authorization
 {
-    public  class HasPermissionRequirement: IAuthorizationRequirement
+    public  class HasPermissionRequirement
     {
         public string Permission { get; }   // readonly — no setter
 

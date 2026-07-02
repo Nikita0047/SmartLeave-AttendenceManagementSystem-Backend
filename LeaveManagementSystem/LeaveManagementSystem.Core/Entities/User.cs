@@ -20,6 +20,7 @@ namespace LeaveManagementSystem.Core.Entities
         public Department Department { get; set; }
         public Guid? ManagerId { get; set; }
         public User Manager { get; set; }
+        public ICollection<User> Subordinates { get; set; }
         public ICollection<LeaveRequest> LeaveRequests { get; set; }
         public ICollection<LeaveBalance> LeaveBalances { get; set; }
         public ICollection<AttendenceRecord> AttendenceRecords { get; set; }

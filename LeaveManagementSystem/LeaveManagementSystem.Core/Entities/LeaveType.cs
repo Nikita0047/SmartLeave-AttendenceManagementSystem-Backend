@@ -13,5 +13,8 @@ namespace LeaveManagementSystem.Core.Entities
         public int MaxDaysPerYear { get; set; }
         public bool IsCarryForwardAllowed { get; set; }
         public bool IsActive { get; set; } = true;
+
+        public ICollection<LeaveRequest> LeaveRequests { get; set; } = new List<LeaveRequest>();
+        public ICollection<LeaveBalance> LeaveBalances { get; set; } = new List<LeaveBalance>();
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeaveManagementSystem.Core.Authorization
 {
-    public class DepartmentManagerRequirement: IAuthorizationRequirement
+    public class DepartmentManagerRequirement
     {
     }
 }
