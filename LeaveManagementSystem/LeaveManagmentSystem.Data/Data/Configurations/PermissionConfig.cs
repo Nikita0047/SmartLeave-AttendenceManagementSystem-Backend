@@ -1,12 +1,8 @@
-﻿using LeaveManagementSystem.Core.Entities;
-using LeaveManagementSystem.Core.Authorization;
+﻿using LeaveManagementSystem.Core.Authorization;
+using LeaveManagementSystem.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security;
 
 namespace LeaveManagmentSystem.Data.Data.Configurations
 {
@@ -26,7 +22,6 @@ namespace LeaveManagmentSystem.Data.Data.Configurations
 
             builder.HasIndex(p => p.Name).IsUnique();
 
-            // seed all permissions
             builder.HasData(
                 new Permissions { Id = Guid.Parse("00000000-0000-0000-0000-000000000001"), Name = PermissionsConst.Leaves.View, Description = "View leave requests" },
                 new Permissions { Id = Guid.Parse("00000000-0000-0000-0000-000000000002"), Name = PermissionsConst.Leaves.Apply, Description = "Apply for leave" },

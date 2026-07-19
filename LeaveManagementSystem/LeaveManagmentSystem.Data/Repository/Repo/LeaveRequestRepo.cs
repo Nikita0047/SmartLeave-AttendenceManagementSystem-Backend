@@ -49,6 +49,6 @@ namespace LeaveManagmentSystem.Data.Repository.Repo
                     .Include(lr => lr.Employee).ThenInclude(u => u.Department)
                     .Include(lr => lr.LeaveType)
                     .FirstOrDefaultAsync(lr => lr.Id == id);
-        }
-    }
+     }
 }
+

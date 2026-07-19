@@ -1,4 +1,5 @@
-﻿using LeaveManagmentSystem.Data.Data;
+﻿using LeaveManagementSystem.Core.Entities;
+using LeaveManagmentSystem.Data.Data;
 using LeaveManagmentSystem.Data.Repository.IRepository;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagmentSystem.Data.Repository.UnitOfWork
+namespace LeaveManagmentSystem.Data.Repository.UnitOfWorks
 {
     // Infrastructure/Data/UnitOfWork.cs
     public class UnitOfWork : IUnitOfWork
@@ -17,6 +18,7 @@ namespace LeaveManagmentSystem.Data.Repository.UnitOfWork
         public IDepartmentRepo Departments { get; }
         public ILeaveRequestRepo LeaveRequests { get; }
         public ILeaveBalanceRepo LeaveBalances { get; }
+        public IPermissionRepo Permissions { get; }
         public ILeaveTypeRepo LeaveTypes { get; }
         public IAttendenceRecoRepo Attendance { get; }
         public IRolePermissionRepo RolePermissions { get; }
@@ -29,7 +31,8 @@ namespace LeaveManagmentSystem.Data.Repository.UnitOfWork
             ILeaveBalanceRepo leaveBalances,
             ILeaveTypeRepo leaveTypes,
             IAttendenceRecoRepo attendance,
-            IRolePermissionRepo rolePermissions)
+            IRolePermissionRepo rolePermissions,
+            IPermissionRepo permission)
         {
             _context = context;
             Users = users;
@@ -39,6 +42,7 @@ namespace LeaveManagmentSystem.Data.Repository.UnitOfWork
             LeaveTypes = leaveTypes;
             Attendance = attendance;
             RolePermissions = rolePermissions;
+            Permissions = permission;
         }
 
         public async Task<int> SaveChangesAsync()

@@ -1,7 +1,7 @@
 ﻿using LeaveManagmentSystem.Data.Data;
 using LeaveManagmentSystem.Data.Repository.IRepository;
 using LeaveManagmentSystem.Data.Repository.Repo;
-using LeaveManagmentSystem.Data.Repository.UnitOfWork;
+using LeaveManagmentSystem.Data.Repository.UnitOfWorks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -33,6 +33,7 @@ namespace LeaveManagmentSystem.Data.Repository
             services.AddScoped<ILeaveTypeRepo, LeaveTypeRepo>();
             services.AddScoped<IAttendenceRecoRepo, AttendenceRepo>();
             services.AddScoped<IRolePermissionRepo, RolePermissionRepo>();
+            services.AddScoped<IPermissionRepo, PermissionRepo>();
 
             // unit of work
             services.AddScoped<IUnitOfWork, UnitOfWork>();

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagmentSystem.Data.Repository.UnitOfWork
+namespace LeaveManagmentSystem.Data.Repository.UnitOfWorks
 {
     public interface IUnitOfWork : IDisposable
     {
@@ -16,6 +16,7 @@ namespace LeaveManagmentSystem.Data.Repository.UnitOfWork
         ILeaveTypeRepo LeaveTypes { get; }
         IAttendenceRecoRepo Attendance { get; }
         IRolePermissionRepo RolePermissions { get; }
+        IPermissionRepo Permissions { get; }
 
         Task<int> SaveChangesAsync();
     }

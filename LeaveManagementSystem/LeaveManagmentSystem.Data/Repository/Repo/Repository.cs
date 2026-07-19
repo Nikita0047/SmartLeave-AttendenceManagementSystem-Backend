@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static LeaveManagmentSystem.Data.Repository.Repo.Repository<T>;
+
 
 namespace LeaveManagmentSystem.Data.Repository.Repo
 {
@@ -39,4 +39,3 @@ namespace LeaveManagmentSystem.Data.Repository.Repo
                 => _dbSet.Remove(entity);
         }
     }
-}
