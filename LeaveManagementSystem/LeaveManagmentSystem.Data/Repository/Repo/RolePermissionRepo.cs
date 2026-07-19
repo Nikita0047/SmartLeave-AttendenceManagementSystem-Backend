@@ -37,4 +37,4 @@ namespace LeaveManagmentSystem.Data.Repository.Repo
             }
         }
     }
-}
+

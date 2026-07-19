@@ -17,12 +17,14 @@ namespace LeaveManagementSystem.Core.Dtos.User
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        
         [MinLength(8)]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         [Required]
         public UserRole Role { get; set; }
+
+        public bool? IsActive { get; set; } 
 
         [Required]
         public Guid DepartmentId { get; set; }

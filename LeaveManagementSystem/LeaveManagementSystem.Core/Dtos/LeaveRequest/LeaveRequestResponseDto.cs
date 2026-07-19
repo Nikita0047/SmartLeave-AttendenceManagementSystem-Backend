@@ -9,9 +9,11 @@ namespace LeaveManagementSystem.Core.Dtos.LeaveRequest
    public class LeaveRequestResponseDto
     {
         public Guid Id { get; set; }
+        public Guid EmployeeId { get; set; }
         public string EmployeeName { get; set; } = string.Empty;
         public string DepartmentName { get; set; } = string.Empty;
 
+        public Guid LeaveTypeId { get; set; }
         public string LeaveTypeName { get; set; } = string.Empty;
 
         public DateOnly StartDate { get; set; }
@@ -23,5 +25,7 @@ namespace LeaveManagementSystem.Core.Dtos.LeaveRequest
         public string? ReviewerName { get; set; }
         public string? ReviewRemark { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        
     }
 }

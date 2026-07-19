@@ -18,11 +18,11 @@ namespace LeaveManagmentSystem.Data.Repository.Repo
        
             public AttendenceRepo(AppDbContext context) : base(context) { }
 
-            public async Task<AttendenceRecord?> GetByEmployeeAndDateAsync(Guid employeeId, DateOnly date)
+            public async Task<AttendenceRecord?> GetByEmployeeIdAndDateAsync(Guid employeeId, DateOnly date)
                 => await _dbSet
                     .FirstOrDefaultAsync(a => a.EmployeeId == employeeId && a.Date == date);
 
-            public async Task<IEnumerable<AttendenceRecord>> GetByEmployeeAndMonthAsync(
+            public async Task<IEnumerable<AttendenceRecord>> GetByEmployeeIdAndMonthAsync(
                 Guid employeeId, int month, int year)
                 => await _dbSet
                     .Where(a => a.EmployeeId == employeeId
@@ -45,4 +45,4 @@ namespace LeaveManagmentSystem.Data.Repository.Repo
                     .ToListAsync();
         }
     }
-}
+
